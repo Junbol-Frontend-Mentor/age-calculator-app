@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body section,
+header {
+  padding: 0;
+  margin: 0;
+}
+
+/* .myClass {
+  @include typography("Josefin Sans", 700, 2rem, 1.5, #333);
+}
+
+.body-text {
+  @include typography("Alata", 400, 1rem, 1.5, #666);
+} */
+/* QUERY FOR MOBILE FIRST */
+html,
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: hsl(27, 66%, 92%);
+}
+
+main {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-bottom: 2rem;
+  flex: 1 0 auto; /* This allows the main content to grow and shrink but not shrink smaller than its content */
+}
+
+.card {
+  width: 24rem;
+  height: 27rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.myBalance {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: hsl(10, 79%, 65%);
+}
+.myBalance__totalGrpTop {
+  width: 7rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem;
+  align-items: left;
+}
+.myBalance__monthTotalTop {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+.myBalance__miniTitleTop {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: hsl(33, 100%, 98%);
+}
+.myBalance__totalTop {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+}
+.myBalance__circles {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: right;
+  position: relative;
+  align-items: center;
+}
+.myBalance__whiteCircle {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  z-index: 2;
+  border-radius: 50%;
+  position: absolute;
+  border: 3px solid hsl(0, 0%, 100%);
+}
+.myBalance__blackCircle {
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 0%);
+}
+
+.spending {
+  width: 100%;
+  height: 24rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: hsl(0, 0%, 100%);
+}
+.spending__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 0%);
+  margin-bottom: 2rem;
+}
+
+.bars {
+  width: 100%;
+  height: 11rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.barGrp {
+  width: 2rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  align-items: center;
+}
+.barGrp:hover .amount, .barGrp:focus-within .amount {
+  opacity: 1; /* Show amount on bar hover or focus */
+}
+
+.bar {
+  width: 2rem;
+  height: 0; /* Start from 0 height */
+  display: flex;
+  border-radius: 4px;
+  position: relative;
+  background-color: hsl(10, 79%, 65%);
+  transition: height 1.5s ease; /* Transition for height */
+}
+.bar:hover, .bar:focus {
+  border-radius: 5px;
+  background-color: hsl(186, 34%, 60%);
+}
+
+.amount {
+  width: 4rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: 2;
+  margin-bottom: 2px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 0%);
+  transition: opacity 1s ease;
+}
+
+.day {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 0%);
+}
+
+hr {
+  border: 1px solid hsl(28, 10%, 53%);
+  margin-bottom: 1rem;
+}
+
+.bottomRow {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.bottomRow__totalGrpBottom {
+  width: 8rem;
+  height: 3rem;
+}
+.bottomRow__miniTitleBottom {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+.bottomRow__totalBottom {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+.bottomRow__percentage {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  color: hsl(0, 0%, 0%);
+}
+.bottomRow__month {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: hsl(28, 10%, 53%);
+}
+
+.attribution {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  top: 12rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: hsl(0, 0%, 50%);
+}
+
+.attribution a {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
