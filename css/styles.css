@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *,
 *::before,
 *::after {
@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: hsl(27, 66%, 92%);
+  background-color: hsl(0, 0%, 86%);
 }
 
 main {
@@ -38,210 +38,181 @@ main {
   align-items: center;
   scroll-margin-bottom: 2rem;
   flex: 1 0 auto; /* This allows the main content to grow and shrink but not shrink smaller than its content */
+  background-color: hsl(0, 0%, 86%);
 }
 
-.card {
-  width: 24rem;
-  height: 27rem;
+.cardContainer {
+  width: 25rem;
+  height: 30rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin-top: 10rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-}
-
-.myBalance {
-  width: 100%;
-  height: 5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
   padding: 1.5rem;
-  margin-bottom: 1rem;
-  background-color: hsl(10, 79%, 65%);
-}
-.myBalance__totalGrpTop {
-  width: 7rem;
-  height: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0rem;
-  align-items: left;
-}
-.myBalance__monthTotalTop {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: hsl(0, 0%, 100%);
-}
-.myBalance__miniTitleTop {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: hsl(33, 100%, 98%);
-}
-.myBalance__totalTop {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: hsl(0, 0%, 100%);
-}
-.myBalance__circles {
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: right;
-  position: relative;
-  align-items: center;
-}
-.myBalance__whiteCircle {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-  z-index: 2;
-  border-radius: 50%;
-  position: absolute;
-  border: 3px solid hsl(0, 0%, 100%);
-}
-.myBalance__blackCircle {
-  width: 2rem;
-  height: 2rem;
-  z-index: 1;
-  border-radius: 50%;
-  background-color: hsl(0, 0%, 0%);
-}
-
-.spending {
-  width: 100%;
-  height: 24rem;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 1.5rem;
+  border-radius: 25px 25px 30% 25px;
   margin-bottom: 2rem;
   background-color: hsl(0, 0%, 100%);
 }
-.spending__title {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 1.3rem;
-  line-height: 1.5;
-  color: hsl(0, 0%, 0%);
-  margin-bottom: 2rem;
-}
 
-.bars {
+.dateTopRow {
   width: 100%;
-  height: 11rem;
+  height: 10rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  background-color: hsl(0, 0%, 100%);
 }
-
-.barGrp {
-  width: 2rem;
-  height: 12rem;
+.dateTopRow__dateGrp {
+  width: 5.5rem;
+  height: 10rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  align-items: center;
+  justify-content: flex-start;
 }
-.barGrp:hover .amount, .barGrp:focus-within .amount {
-  opacity: 1; /* Show amount on bar hover or focus */
-}
-
-.bar {
-  width: 2rem;
-  height: 0; /* Start from 0 height */
+.dateTopRow__label {
+  width: 5.5rem;
+  height: 2rem;
   display: flex;
-  border-radius: 4px;
-  position: relative;
-  background-color: hsl(10, 79%, 65%);
-  transition: height 1.5s ease; /* Transition for height */
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 50%);
 }
-.bar:hover, .bar:focus {
-  border-radius: 5px;
-  background-color: hsl(186, 34%, 60%);
-}
-
-.amount {
-  width: 4rem;
-  height: 2.5rem;
+.dateTopRow__inputField {
+  width: 5.5rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  opacity: 0;
-  z-index: 2;
-  margin-bottom: 2px;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(0, 0%, 0%);
-  transition: opacity 1s ease;
-}
-
-.day {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 0.8rem;
-  line-height: 1.5;
+  border-style: none;
+  text-align: center;
+  border-radius: 7px 7px 7px 7px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.1;
   color: hsl(0, 0%, 0%);
+  border: 3px solid hsl(0, 0%, 86%);
 }
-
-hr {
-  border: 1px solid hsl(28, 10%, 53%);
-  margin-bottom: 1rem;
+.dateTopRow__inputField:hover, .dateTopRow__inputField:focus {
+  outline: none;
+  border: 2px solid hsl(259, 100%, 65%);
 }
-
-.bottomRow {
+.dateTopRow__inputField::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: hsl(0, 0%, 86%);
+  opacity: 1; /* Ensure the opacity is set, as some browsers may apply a default lower opacity */
+}
+.dateTopRow__input-valid {
+  border: 4px solid hsl(103, 99%, 31%);
+}
+.dateTopRow__inputLabel-error {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 100%, 50%);
+}
+.dateTopRow__input-error, .dateTopRow__input-error:focus {
+  outline: hsl(0, 100%, 50%);
+  border: 1px solid hsl(0, 100%, 50%);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 100%, 50%);
+}
+.dateTopRow__errorWarning {
   width: 100%;
+  color: hsl(0, 100%, 50%);
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 14px;
+  padding-right: 15px;
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: hsl(0, 100%, 50%);
+}
+.dateTopRow__hide {
+  display: none;
+}
+
+.arrowLine {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 3rem;
+}
+.arrowLine hr {
+  width: 20rem;
+  border: 1px solid hsl(0, 0%, 86%);
+}
+.arrowLine__arrow {
+  width: 4rem;
   height: 4rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  background-color: hsl(259, 100%, 65%);
 }
-.bottomRow__totalGrpBottom {
-  width: 8rem;
-  height: 3rem;
+.arrowLine__arrow img {
+  width: 2.5rem;
 }
-.bottomRow__miniTitleBottom {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 0.7rem;
-  line-height: 1.2;
-}
-.bottomRow__totalBottom {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  line-height: 1.5;
-}
-.bottomRow__percentage {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1;
-  color: hsl(0, 0%, 0%);
-}
-.bottomRow__month {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 0.7rem;
-  line-height: 1;
-  color: hsl(28, 10%, 53%);
+.arrowLine__arrow:hover, .arrowLine__arrow:focus {
+  background-color: hsl(0, 100%, 67%);
 }
 
+.bigTitles {
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  position: relative;
+  transition: height 1.5s ease; /* Transition for height */
+}
+.bigTitles__bigTitle {
+  display: inline-flex;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: hsl(0, 0%, 0%);
+  font-style: oblique;
+}
+.bigTitles__coloredNumber {
+  margin-right: 0.7rem;
+  color: hsl(259, 100%, 65%);
+  animation: spinUp 0.5s ease-in-out forwards;
+}
+
+@keyframes spinUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .attribution {
   width: 100%;
   height: 4rem;
@@ -259,5 +230,9 @@ hr {
   color: hsl(0, 0%, 0%);
   text-decoration: none;
 }
+
+/* @media (min-width: 1024px) {
+}
+ */
 
 /*# sourceMappingURL=styles.css.map */

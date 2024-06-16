@@ -8,37 +8,60 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
     <title>Frontend Mentor | Age calculator app</title>
+
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script defer src="./scripts/script.js"></script>
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main>
-      <div class="card_container">
-        <div class="topRowDate">
-          <div class="day"></div>
-          <div class="month"></div>
-          <div class="year"></div>
+      <div class="cardContainer">
+        <div class="dateTopRow">
+          <div class="dateTopRow__dateGrp">
+            <label class="dateTopRow__label" for="day" id="dayLabel">DAY</label>
+            <input class="dateTopRow__inputField" placeholder="DD" type="text" name="day" required id="dayInput" />
+            <span class="dateTopRow__errorWarning dateTopRow__hide" id="day-emptyError">Input fields cannot be empty</span>
+            <span class="dateTopRow__errorWarning dateTopRow__hide" id="day-onlyNumbersError">Use two numbers</span>
+          </div>
+          <div class="dateTopRow__dateGrp">
+            <label class="dateTopRow__label" for="month" id="monthLabel">MONTH</label>
+            <input class="dateTopRow__inputField" placeholder="MM" type="text" id="monthInput" />
+            <span class="dateTopRow__errorWarning dateTopRow__hide" id="month-emptyError">Input fields cannot be empty</span>
+            <span class="dateTopRow__errorWarning dateTopRow__hide" id="month-onlyNumbersError">Use two numbers</span>
+          </div>
+          <div class="dateTopRow__dateGrp">
+            <label class="dateTopRow__label" for="year" id="yearLabel">YEAR</label>
+            <input class="dateTopRow__inputField" placeholder="YYYY" type="text" name="year" required id="yearInput" />
+            <span class="dateTopRow__errorWarning dateTopRow__hide" id="year-emptyError">Input fields cannot be empty</span>
+            <span class="dateTopRow__errorWarning dateTopRow__hide" id="year-onlyNumbersError">Use four numbers</span>
+          </div>
         </div>
-
-
+        <div class="arrowLine">
+          <hr />
+          <div class="arrowLine__arrow" type="button" tabindex="0" id="getAgeButton">
+            <img src="./assets/images/icon-arrow.svg" alt="" />
+          </div>
+        </div>
+        <div class="bigTitles">
+          <div class="bigTitles__bigTitle">
+            <div class="bigTitles__coloredNumber" id="years">- -</div>
+            <p>years</p>
+          </div>
+          <div class="bigTitles__bigTitle">
+            <div class="bigTitles__coloredNumber" id="months">- -</div>
+            <p>months</p>
+          </div>
+          <div class="bigTitles__bigTitle">
+            <div class="bigTitles__coloredNumber" id="days">- -</div>
+            <p>days</p>
+          </div>
+        </div>
       </div>
     </main>
-    Day DD Month MM Year YYYY -- years -- months -- days
-    <footer>
-      <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> Coded by
-        <a href="https://www.frontendmentor.io/profile/Junbol" target="_blank">Junier Bolívar © 2024</a>
-      </div>
-    </footer>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="#">Your Name Here</a>.
+    </div>
   </body>
 </html>
